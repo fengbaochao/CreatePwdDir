@@ -13,6 +13,9 @@ import rarfile
 import os
 import threading
 
+"""
+解压rar文件 成功返回True 错误返回False
+"""
 def extractRar(filePath, pwd):
     extractPath = os.path.join(os.path.split(filePath)[0], 'extract')
     rf = rarfile.RarFile(filePath)
