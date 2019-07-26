@@ -163,12 +163,14 @@ def createPwd(data):
             index = index + 1
             pwd = "".join(key)
             dic.write(pwd + "\n")
-            if extractRar(filePath, pwd):
-                print('次数', index, '密码', pwd, '破解成功！！！')
-                return 1
+            if len(filePath)>0:
+                if extractRar(filePath, pwd):
+                    print('次数', index, '密码', pwd, '破解成功！！！')
+                    return 1
+                else:
+                    print('次数', index, '密码', pwd, '密码错误！！！')
             else:
-                print('次数', index, '密码', pwd, '密码错误！！！')
-
+                print('次数', index, '密码', pwd, '写入完成！！！')
     dic.close()
 
 """
